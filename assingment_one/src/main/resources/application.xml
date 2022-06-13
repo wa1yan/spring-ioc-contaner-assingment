@@ -2,9 +2,23 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-
-	<bean id="message" class="java.lang.String">
-		<constructor-arg value="Hello IOC container on Servlet"></constructor-arg>
+	
+	<bean id="dataSource" class="com.mysql.cj.jdbc.MysqlDataSource">
+		<property name="url" value="jdbc:mysql://localhost:3306/assignment_one"></property>
+		<property name="user" value="root"></property>
+		<property name="password" value="root"></property>
 	</bean>
+
+	<bean id="courseModel" class="com.waiyanhtet.assignment.model.impl.CourseModelImpl">
+		<constructor-arg ref="dataSource"></constructor-arg>
+	</bean>
+	
+	<bean id="openClassModel" class="com.waiyanhtet.assignment.model.impl.OpenClassModelImpl">
+		<constructor-arg ref="dataSource"></constructor-arg>
+	</bean>
+	
+	<bean id="registrationModel" class="com.waiyanhtet.assignment.model.impl.RegistrationModelImpl">
+		<constructor-arg ref="dataSource"></constructor-arg>
+	</bean>
+	
 </beans>
