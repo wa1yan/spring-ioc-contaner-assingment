@@ -48,4 +48,10 @@ public class Registration {
 		this.email = email;
 	}
 
+	@Override
+	public String toString() {
+		return "Registration [id=" + id + ", openClass=" + openClass + ", student=" + student + ", phone=" + phone
+				+ ", email=" + email + "]";
+	}
+
 }

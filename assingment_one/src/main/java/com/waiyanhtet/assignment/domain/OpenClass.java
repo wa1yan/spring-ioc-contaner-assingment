@@ -41,4 +41,8 @@ public class OpenClass {
 		this.teacher = teacher;
 	}
 
+	@Override
+	public String toString() {
+		return "OpenClass [id=" + id + ", course=" + course + ", startDate=" + startDate + ", teacher=" + teacher + "]";
+	}
 }
